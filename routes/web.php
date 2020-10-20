@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController;
+use App\Http\Controllers\Frontend\ProductDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,11 @@ use App\Http\Controllers\Frontend\HomeController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('',[HomeController::class,'index'])->name('get.home');
+Route::group(['namespace' => 'Frontend'], function () {
+    Route::get('',[HomeController::class,'index'])->name('get.home');
+    Route::get('san-pham',[ProductController::class,'index'])->name('get.product.list');
+    Route::get('san-pham/{slug}',[ProductDetailController::class,'getProductDetail'])->name('get.product.detail');
 
+});
 
 include('route_admin.php');

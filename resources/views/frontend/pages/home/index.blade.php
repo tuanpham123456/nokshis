@@ -1,4 +1,26 @@
 @extends('layouts.app_master_frontend')
+@section('css')
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Nokshi - Minimalist eCommerce HTML5 Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/favicon.png') }}">
+
+<!-- all css here -->
+<link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/chosen.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/meanmenu.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/bundle.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+<script src="{{ asset('frontend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+@stop
 @section('content')
           <!-- menu-style start -->
             <div class="sidebarmenu-wrapper">
@@ -16,22 +38,22 @@
                                     <li><a href="index-4.html">home version 4</a></li>
                                 </ul>
                             </li>
-                            <li class="cr-dropdown"><a href="#">shop <i class="ion-ios-arrow-down"></i></a>
+                            <li class="cr-dropdown"><a href="#">Product<i class="ion-ios-arrow-down"></i></a>
                                 <ul>
-                                    <li class="cr-sub-dropdown sub-style"><a href="#">shop grid<i class="ion-ios-arrow-down"></i></a>
+                                    <li class="cr-sub-dropdown sub-style"><a href="#">List Product<i class="ion-ios-arrow-down"></i></a>
                                         <ul>
-                                            <li><a href="shop-grid-2-col.html"> grid 2 column</a></li>
-                                            <li><a href="shop-grid-3-col.html"> grid 3 column</a></li>
-                                            <li><a href="shop.html"> grid 4 column</a></li>
-                                            <li><a href="shop-grid-6-col.html"> grid 6 column</a></li>
-                                            <li><a href="shop-grid-box.html"> grid box style</a></li>
+                                            @if (isset($categories))
+                                                @foreach($categories as $category)
+                                                  <li><a href="">{{ $category->c_name }}</a></li>
+                                                @endforeach
+                                            @endif                                     
                                         </ul>
                                     </li>
                                     <li class="cr-sub-dropdown sub-style"><a href="#">shop list<i class="ion-ios-arrow-down"></i></a>
                                         <ul>
                                             <li><a href="shop-list.html"> list 1 column</a></li>
                                             <li><a href="shop-list-2-col.html"> list 2 column</a></li>
-                                            <li><a href="shop-list-3-col.html"> list 3 column</a></li>
+                                            <li><a href="{{ route('get.product.list') }}">list 3 column</a></li>
                                             <li><a href="shop-list-box.html"> list box style</a></li>
                                         </ul>
                                     </li>
@@ -1002,4 +1024,17 @@
                     </div>
                 </div>
             </div>
+@stop
+@section('js')
+<script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
+<script src="{{ asset('frontend/js/popper.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('frontend/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('frontend/js/ajax-mail.js') }}"></script>
+<script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('frontend/js/plugins.js') }}"></script>
+<script src="{{ asset('frontend/js/main.js') }}"></script>
 @stop

@@ -29,10 +29,10 @@
                 <div class="col-lg-7 col-md-7 col-5">
                     <div class="logo-menu-wrapper text-center">
                         <div class="logo pr-100">
-                            <a href="index.html"><img src="{{ asset('frontend/img/logo/logo.png') }}" alt="" /></a>
+                            <a href="{{ route('get.home') }}"><img src="{{ asset('frontend/img/logo/logo.png') }}" alt="" /></a>
                         </div>
                         <div class="sticky-logo pr-100">
-                            <a href="index.html"><img src="{{ asset('frontend/img/logo/2.png') }}" alt="" /></a>
+                            <a href="{{ route('get.home') }}"><img src="{{ asset('frontend/img/logo/2.png') }}" alt="" /></a>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                                             <ul>
                                                 <li><a href="shop-list.html"> list 1 column</a></li>
                                                 <li><a href="shop-list-2-col.html"> list 2 column</a></li>
-                                                <li><a href="shop-list-3-col.html"> list 3 column</a></li>
+                                                <li><a href=""> list 3 column</a></li>
                                                 <li><a href="shop-list-box.html"> list box style</a></li>
                                             </ul>
                                         </li>
