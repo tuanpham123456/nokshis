@@ -183,7 +183,9 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            var DEVICE = {{ device_agent() }}
+        </script>
 		<!-- all js here -->
       @yield('js')
     </body>

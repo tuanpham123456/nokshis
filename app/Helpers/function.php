@@ -67,20 +67,20 @@ if (!function_exists('upload_image'))
         }
     }
 
-    // if (!function_exists('device_agent')) {
-    //     function device_agent()
-    //     {
-    //         $agent = new Jenssegers\Agent\Agent();
+    if (!function_exists('device_agent')) {
+        function device_agent()
+        {
+            $agent = new Jenssegers\Agent\Agent();
 
-    //         if ($agent->isMobile()) {
-    //             return 'mobile';
-    //         } elseif ($agent->isDesktop()) {
-    //             return 'desktop';
-    //         } elseif ($agent->isTablet()) {
-    //             return 'tablet';
-    //         }
-    //     }
-    // }
+            if ($agent->isMobile()) {
+                return 'mobile';
+            } elseif ($agent->isDesktop()) {
+                return 'desktop';
+            } elseif ($agent->isTablet()) {
+                return 'tablet';
+            }
+        }
+    }
 
     // if (!function_exists('number_price')){
     //     function number_price($price , $sale =0){
